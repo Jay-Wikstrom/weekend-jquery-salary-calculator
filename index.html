@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -9,6 +10,7 @@
     <script src="jquery.js"></script>
     <script src="client.js"></script>
 </head>
+
 <body>
     <header>
         <h1>Salary Calculator</h1>
@@ -20,7 +22,7 @@
         <input placeholder="Last Name" id="lastName" />
         <input placeholder="ID" id="inputId" />
         <input placeholder="Title" id="title" />
-        <input placeholder="Annual Salary" id="annualSalary" />
+        <input placeholder="Annual Salary" id="annualSalary" type="number"/>
         <br>
         <button id="submit">Submit</button>
         <br>
@@ -29,20 +31,40 @@
     <section>
         <h2>Employees</h2>
     </section>
-
-    <section>
+<!--
+    <section id="input">
         <form id="holder">
             <label for="firstNameForm">First Name</label>
             <label for="lastNameForm">Last Name</label>
             <label for="idForm">ID</label>
             <label for="titleForm">Title</label>
             <label for="annualSalaryForm">Annual Salary</label>
-
+            <br>
         </form>
     </section>
+-->
+
+    <table>
+        <thead>
+            <tr>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>ID</th>
+                <th>Title</th>
+                <th>Annual Salary</th>
+            </tr>
+        </thead>
+        <tbody>
+            
+        </tbody>
+    </table>
+    </body>
+
 
     <section>
         <h3 id="totalMonthly">Total Monthly: <span id=monthly>$</span></h3>
     </section>
+    
 </body>
+
 </html>

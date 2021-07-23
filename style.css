@@ -6,11 +6,12 @@ h1 {
 }
 header {
     margin: -8px;
+    margin-bottom: 20px;
     background-color: grey;
     padding: 20px;
 }
 
-button {
+#submit {
     margin: 5px 20px 5px 5px;
     float: right;
     padding-left: 75px;
@@ -18,12 +19,11 @@ button {
 }
 input {
     margin: 10px;
+    width: 17%
 }
 
-form{
-    display: block;
-    border: 2px black;
-}
+
+
 label {
     width: 100%;
     margin: 50px;
@@ -32,3 +32,18 @@ label {
 #totalMonthly {
     text-align: right;
 }
+
+
+.append{
+    text-align: center;
+    width: 100%;
+}
+table {
+    width: 1000px;
+}
+td {
+    text-align: center;
+    
+  flex-wrap: wrap;
+}
+

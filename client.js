@@ -1,17 +1,19 @@
 $(document).ready(onReady);
 
-function onReady(){
+let totalPerMonth = 0;
+
+function onReady() {
     console.log('Ready');
 
     $(document).on('click', '#submit', addToForm);
     $(document).on('click', '#deleteButton', deleteInput);
 }
 
-function deleteInput(){
+function deleteInput() {
     $(this).parent().remove();
 }
 
-function addToForm(){
+function addToForm() {
     let inputFirstName = $('#firstName').val();
     let inputLastName = $('#lastName').val();
     let inputId = $('#inputId').val();
@@ -19,23 +21,56 @@ function addToForm(){
     let inputAnnualSalary = $('#annualSalary').val();
     //console.log(inputFirstName, inputLastName, inputId, inputTitle, inputAnnualSalary)
 
-    //Append input to form
-    $('form').append(`
-        <label><br>
+    
+    //Append to table
+    $('tbody').append(`
+        <td>
             ${inputFirstName}
+        </td>
+        <td>
             ${inputLastName}
+        </td>
+        <td>
             ${inputId}
+        </td>
+        <td>
             ${inputTitle}
+        </td>
+        <td>
             ${inputAnnualSalary}
+        </td>
+        <br>
+    `)
+    $('tbody').append(`
+        <tr></tr>
+    `)
+    
+    
+    //Append input to form
+    /*
+    $('form').append(`
+        <label class="append">
+            ${inputFirstName}
+        </label>
+        <label class="append">
+            ${inputLastName}
+        </label>
+        <label class="append">
+            ${inputId}
+        </label>
+            ${inputTitle}
+        <label class="append">
+            ${inputAnnualSalary}
+        </label>
+        <label class="append">
+            <br>
             <button class="deleteButton">Delete</button>
         </label>
+        <br>
 
     `)
-
-
-    let addMonthly = 0;
-    addMonthly = addMonthly + parseInt(inputAnnualSalary);
-    console.log(addMonthly);
+*/
+    totalMonthly();
 
     //Clear input
     $('#firstName').val('');
@@ -44,15 +79,12 @@ function addToForm(){
     $('#title').val('');
     $('#annualSalary').val('');
 
-
-    
-    //totalMonthly();
 }
 
-/*
+
 function totalMonthly(){
-    let addMonthly = 0;
-    addMonthly = addMonthly + parseInt(inputAnnualSalary);
-    console.log(addMonthly);
+    let inputAnnualSalary = $('#annualSalary').val();
+    totalPerMonth += parseInt(inputAnnualSalary) / 12;
+    console.log(totalPerMonth);
 }
-*/
+
