@@ -22,28 +22,20 @@ input {
     width: 17%
 }
 
-
-
-label {
-    width: 100%;
-    margin: 50px;
-    border: 3px lightgrey;
-}
 #totalMonthly {
     text-align: right;
 }
 
-
-.append{
-    text-align: center;
-    width: 100%;
-}
 table {
     width: 1000px;
 }
+
 td {
     text-align: center;
     
   flex-wrap: wrap;
 }
 
+table, th, td {
+  border: 1px solid black;
+}

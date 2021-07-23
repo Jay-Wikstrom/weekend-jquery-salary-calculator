@@ -10,6 +10,7 @@ function onReady() {
 }
 
 function deleteInput() {
+    console.log('delete test');
     $(this).parent().remove();
 }
 
@@ -19,57 +20,18 @@ function addToForm() {
     let inputId = $('#inputId').val();
     let inputTitle = $('#title').val();
     let inputAnnualSalary = $('#annualSalary').val();
-    //console.log(inputFirstName, inputLastName, inputId, inputTitle, inputAnnualSalary)
+    
 
-    
-    //Append to table
     $('tbody').append(`
-        <td>
-            ${inputFirstName}
-        </td>
-        <td>
-            ${inputLastName}
-        </td>
-        <td>
-            ${inputId}
-        </td>
-        <td>
-            ${inputTitle}
-        </td>
-        <td>
-            ${inputAnnualSalary}
-        </td>
-        <br>
-    `)
-    $('tbody').append(`
-        <tr></tr>
+        <tr>
+            <td>${inputFirstName}</td>
+            <td>${inputLastName}</td>
+            <td>${inputId}</td>
+            <td>${inputTitle}</td>
+            <td>${inputAnnualSalary}</td>
+        </tr>
     `)
     
-    
-    //Append input to form
-    /*
-    $('form').append(`
-        <label class="append">
-            ${inputFirstName}
-        </label>
-        <label class="append">
-            ${inputLastName}
-        </label>
-        <label class="append">
-            ${inputId}
-        </label>
-            ${inputTitle}
-        <label class="append">
-            ${inputAnnualSalary}
-        </label>
-        <label class="append">
-            <br>
-            <button class="deleteButton">Delete</button>
-        </label>
-        <br>
-
-    `)
-*/
     totalMonthly();
 
     //Clear input
@@ -81,10 +43,17 @@ function addToForm() {
 
 }
 
-
-function totalMonthly(){
+function totalMonthly() {
+    let total = 0;
     let inputAnnualSalary = $('#annualSalary').val();
     totalPerMonth += parseInt(inputAnnualSalary) / 12;
-    console.log(totalPerMonth);
+    total += totalPerMonth
+    //console.log(totalPerMonth);
+    console.log(total);
+
+    $('#monthly').append(`
+    <span>
+        ${(total)}
+    </span>`)
 }
 
