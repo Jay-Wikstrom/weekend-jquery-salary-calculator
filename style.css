@@ -18,11 +18,16 @@ button {
 }
 input {
     margin: 10px;
-    float: right;
+    
     
 }
 
-#holder {
+form{
+    display: block;
+    border: 2px black;
+}
+label {
     width: 100%;
-    margin: 25px;
+    margin: 50px;
+    border: 3px lightgrey;
 }
