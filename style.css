@@ -41,6 +41,7 @@ th {
     text-align: left;
     font-size: 20px;
     padding: 5px 5px;
+    background-color: lightgray;
 }
 
 table, th, td {
