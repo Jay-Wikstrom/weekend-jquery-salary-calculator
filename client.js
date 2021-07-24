@@ -1,7 +1,6 @@
 
 
 let salaryCalculatorArray = [];
-let month;
 
 $(document).ready(onReady);
 
@@ -57,8 +56,8 @@ function totalMonthly() {
     totalPerMonth = Math.ceil(totalPerMonth);
     let updateMonthColor = $('#totalMonthly')
 
-    month = $('#monthly').text(totalPerMonth);
-    if (month > 19999){
+    $('#monthly').text(totalPerMonth);
+    if (totalPerMonth > 19999){
         updateMonthColor.css('color', 'red');
     }
     
