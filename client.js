@@ -1,6 +1,8 @@
-$(document).ready(onReady);
 
-let totalPerMonth = 0;
+
+let salaryCalculatorArray = [];
+
+$(document).ready(onReady);
 
 function onReady() {
     console.log('Ready');
@@ -16,22 +18,15 @@ function deleteInput() {
 
 function addToForm() {
 
-
     let salaryCalculator = {
         firstName: $('#firstName').val(),
         lastName: $('#lastName').val(),
         id: $('#inputId').val(),
         title: $('#title').val(),
-        annualSalary: $('#annualSalary').val()
+        annualSalary: Number($('#annualSalary').val())
     }
-
-    /*
-    let inputFirstName = $('#firstName').val();
-    let inputLastName = $('#lastName').val();
-    let inputId = $('#inputId').val();
-    let inputTitle = $('#title').val();
-    let inputAnnualSalary = $('#annualSalary').val();
-    */
+    salaryCalculatorArray.push(salaryCalculator);
+    console.log(salaryCalculatorArray);
     
 
     $('tbody').append(`
@@ -43,32 +38,22 @@ function addToForm() {
             <td>${salaryCalculator.annualSalary}</td>
         </tr>
     `)
-    
-    totalMonthly();
 
-    /*
-    //Clear input
-    $('#firstName').val('');
-    $('#lastName').val('');
-    $('#inputId').val('');
-    $('#title').val('');
-    $('#annualSalary').val('');
-    */
+    let totalPerYear = 0
+    for (let item of salaryCalculatorArray){
+        totalPerYear += item.annualSalary;
+    }
+    totalPerMonth = totalPerYear / 12;
+    
+    $('#monthly').text(totalPerMonth)
+    console.log(salaryCalculator.annualSalary);
+
+    //totalMonthly();
+
+   
     $('input').val('')
 
 }
 
-function totalMonthly() {
-    let total = 0;
-    let inputAnnualSalary = $('#annualSalary').val();
-    totalPerMonth += parseInt(inputAnnualSalary) / 12;
-    total += totalPerMonth
-    //console.log(totalPerMonth);
-    console.log(total);
 
-    $('#monthly').append(`
-    <span>
-        ${(total)}
-    </span>`)
-}
 
