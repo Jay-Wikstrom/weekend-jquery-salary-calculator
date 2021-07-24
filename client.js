@@ -1,6 +1,7 @@
 
 
 let salaryCalculatorArray = [];
+let month;
 
 $(document).ready(onReady);
 
@@ -8,13 +9,13 @@ function onReady() {
     console.log('Ready');
 
     $(document).on('click', '#submit', addToForm);
-    //$(document).on('click', '#deleteButton', deleteInput);
+    $(document).on('click', '.deleteButton', deleteInput);
 }
-/*
+
 function deleteInput() {
     console.log('delete test');
     $(this).parent().remove();
-}*/
+}
 
 function addToForm() {
 
@@ -26,7 +27,7 @@ function addToForm() {
         annualSalary: Number($('#annualSalary').val())
     }
     salaryCalculatorArray.push(salaryCalculator);
-    console.log(salaryCalculatorArray);
+    //console.log(salaryCalculatorArray);
     
 
     $('tbody').append(`
@@ -36,24 +37,30 @@ function addToForm() {
             <td>${salaryCalculator.id}</td>
             <td>${salaryCalculator.title}</td>
             <td>${salaryCalculator.annualSalary}</td>
+            <td><button class="deleteButton">Delete</button></td>
         </tr>
     `)
 
-    let totalPerYear = 0
-    for (let item of salaryCalculatorArray){
-        totalPerYear += item.annualSalary;
-    }
-    totalPerMonth = totalPerYear / 12;
-    
-    $('#monthly').text(totalPerMonth)
-    console.log(salaryCalculator.annualSalary);
+    totalMonthly()
 
-    //totalMonthly();
 
-   
     $('input').val('')
 
 }
 
+function totalMonthly() {
+    let totalPerYear = 0
+    for (let item of salaryCalculatorArray) {
+        totalPerYear += item.annualSalary;
+    }
+    totalPerMonth = totalPerYear / 12;
+    totalPerMonth = Math.ceil(totalPerMonth);
+    let updateMonthColor = $('#totalMonthly')
 
-
+    month = $('#monthly').text(totalPerMonth);
+    if (month > 19999){
+        updateMonthColor.css('color', 'red');
+    }
+    
+    return totalPerMonth;
+}
