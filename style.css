@@ -4,6 +4,10 @@ h1 {
     color: white;
     
 }
+
+h2 {
+    text-align: center;
+}
 header {
     margin: -8px;
     margin-bottom: 20px;
@@ -11,29 +15,32 @@ header {
     padding: 20px;
 }
 
-#submit {
-    margin: 5px 20px 5px 5px;
-    float: right;
-    padding-left: 75px;
-    background-color: lightgrey;
-}
 input {
-    margin: 10px;
-    width: 17%
+    font-size: 16px;
+    padding: 6px 12px;
+    margin-right: 14px;
+    margin-bottom: 10px;
 }
 
-#totalMonthly {
-    text-align: right;
+select {
+    width: 744px;
+    margin: 0 auto;
 }
 
 table {
-    width: 1000px;
+    width: 744px;
+    margin: 0 auto;
 }
 
-td {
-    text-align: center;
-    
-  flex-wrap: wrap;
+button {
+    font-size: 16px;
+    padding: 6px 11px;
+}
+
+th {
+    text-align: left;
+    font-size: 20px;
+    padding: 5px 5px;
 }
 
 table, th, td {
