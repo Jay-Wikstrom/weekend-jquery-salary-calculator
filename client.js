@@ -11,7 +11,6 @@ function onReady() {
 
 //Delete row added to table
 function deleteInput() {
-    console.log('delete test');
     $(this).parent().parent().remove();
 }
 
@@ -53,6 +52,7 @@ function totalMonthly() {
     }
 
     totalPerMonth = totalPerYear / 12;
+    //Round up to nearest dollar
     totalPerMonth = Math.ceil(totalPerMonth);
     let updateMonthColor = $('#totalMonthly')
 
