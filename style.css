@@ -51,3 +51,8 @@ table, th, td {
 td {
     padding-left: 10px;
 }
+
+#form {
+    width: 744px;
+    margin: 0 auto;
+}
